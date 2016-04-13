@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "index.js": "node index.js"
+    "index.js": "node index.js",
+    "browse": "browserify index.js > bundle.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,9 @@
     "cheerio": "^0.20.0",
     "fs": "0.0.2",
     "request": "^2.70.0"
+  },
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "promisify": "0.0.3"
   }
 }

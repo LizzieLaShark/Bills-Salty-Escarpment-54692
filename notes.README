@@ -1,0 +1,19 @@
+-write a scraper script that scrapes
+    -call it scraper.js and run it from command line
+
+-store links in a json
+
+-write some code that reads the json and renders that data into a webpage
+
+-note, currently links are relative, not absolute!
+
+-could look at using a header to tack host(www.parliament.nz) to
+ the relative path.
+
+-json beautifier => pretty json
+
+http://www.parliament.nz/en-nz/syndication?posting=/en-nz/pb/sc/make-submission/
+http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+http://doc.scrapy.org/en/0.14/intro/overview.html
+http://www.parliament.nz/en-nz/pb/sc/make-submission?Criteria.PageNumber=1&Criteria.ViewDetails=1
+http://www.parliament.nz/en-nz/pb/sc/make-submission
