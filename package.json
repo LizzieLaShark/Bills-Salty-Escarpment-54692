@@ -2,11 +2,11 @@
   "name": "lizzie",
   "version": "1.0.0",
   "description": "Encouraging better engagement with political process in Aotearoa/NZ",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "index.js": "node index.js",
-    "browse": "browserify index.js > bundle.js"
+    "app.js": "node app.js",
+    "build": "browserify -t handlebarsify main.js > main.bundle.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,16 @@
     "request": "^2.70.0"
   },
   "dependencies": {
+    "body-parser": "^1.15.0",
     "browserify": "^13.0.0",
-    "promisify": "0.0.3"
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
+    "node-promise": "^0.5.12",
+    "nodemon": "^1.9.1",
+    "promise": "^7.1.1",
+    "promisify": "0.0.3",
+    "superagent": "^1.8.3",
+    "superagent-promise": "^1.1.0"
   }
 }
