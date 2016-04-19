@@ -10,9 +10,6 @@
 -A link to make a submission
 -Link to govt press release
 
-
-
-
 -note, currently links are relative, not absolute.
 
 -ask about:

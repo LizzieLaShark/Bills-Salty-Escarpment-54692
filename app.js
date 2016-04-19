@@ -5,19 +5,23 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs')
 var port = 5000;
+var hbs = require('express-hbs')
 
 var routes = require('./routes');
 
 var app = express();
 
+
+var hbs = require('express-hbs');
+
+// Use `.hbs` for extensions and find partials in `views/partials`.
 app.engine('hbs', hbs.express4({
-  partialsDir: __dirname + '/views/partials',
-  defaultLayout: __dirname + '/views/layout'
-}))
-
-
-app.use('/', require('./routes.js'))
+  partialsDir: __dirname + '/views'
+}));
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
 
 app.listen(port, function(err, res){  //Setting up server.
     if (err) {
@@ -28,46 +32,23 @@ app.listen(port, function(err, res){  //Setting up server.
     }
 });
 
+app.get('/index', function (req, res) {
+  res.render('index', ({name: 'Lizzie'}))
 
+})
 
+app.get('/list-data', function (req, res) {
+  // have some logic
+  fs.readFile('./links.json', (err, data) => {
+    if (err) throw err;
 
-// app.use(logger('dev'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
-//
-// app.use('/v1/ouraotearoa', ouraotearoa);
-//
-// // catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
-//
-// // error handlers
-//
-// // development error handler
-// // will print stacktrace
-// if (app.get('env') === 'development') {
-//   app.use(function(err, req, res, next) {
-//     res.status(err.status || 500);
-//     res.render('error', {
-//       message: err.message,
-//       error: err
-//     });
-//   });
-// }
-//
-// // production error handler
-// // no stacktraces leaked to user
-// app.use(function(err, req, res, next) {
-//   res.status(err.status || 500);
-//   res.render('error', {
-//     message: err.message,
-//     error: {}
-//   });
-// });
-//
-//
-// module.exports = app;
+    // returning a response with some data
+
+    var parseData = JSON.parse(data) //need to tell it to render just the titles?
+    console.log(parseData)
+    res.send(parseData);
+
+  });
+  //do the readFile then render the data using the
+  //{{links}} thing from the handlebars temp. maybe data.title or somethng
+})

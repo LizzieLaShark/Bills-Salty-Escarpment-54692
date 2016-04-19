@@ -28,6 +28,8 @@
     "browserify": "^13.0.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
+    "express-hbs": "^0.8.4",
+    "handlebars": "^4.0.5",
     "morgan": "^1.7.0",
     "node-promise": "^0.5.12",
     "nodemon": "^1.9.1",
