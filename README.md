@@ -29,7 +29,6 @@ http://www.parliament.nz/en-nz/pb/sc/make-submission?Criteria.PageNumber=1&Crite
 http://www.parliament.nz/en-nz/pb/sc/make-submission
 
 Make the .json file store data as an array of objects.
-get filter method working then get the .text to match the urls.
 
 server side rendering to render the subs list. Instead of using id, can just use index in the array. Can use database if have time.
 
@@ -44,6 +43,13 @@ when they click on the submission they want to view, create a new route, which c
   id will get saved ALONG WITH other data.
 
   video: api folder containing and index and a 'controller to define each route'
+
+Next Steps:
+  -get filter method working then get the paragraphs to match the urls.
+  -render list view onto page prettily using hbs.
+    -use params id's
+  -link titles, paragraphs and url links so you can click a title, and get taken to a new page
+  -render paragraphs to correct page corresponding with index in array???
 
 
 
