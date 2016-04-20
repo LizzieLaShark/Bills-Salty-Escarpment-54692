@@ -41,12 +41,15 @@ app.get('/list-data', function (req, res) {
   // have some logic
   fs.readFile('./links.json', (err, data) => {
     if (err) throw err;
-
-    // returning a response with some data
-
-    var parseData = JSON.parse(data) //need to tell it to render just the titles?
+    var parseData = JSON.parse(data)
     console.log(parseData)
     res.send(parseData);
+// [i].title + ': www.parliament.nz' + parseData[i].url
+    // returning a response with some data
+
+    // var parseData = JSON.parse(data) //need to tell it to render just the titles?
+    // console.log(parseData)
+    // res.send(parseData);
 
   });
   //do the readFile then render the data using the
