@@ -1,0 +1,53 @@
+<doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Our Aotearoa</title>
+
+  <link rel="stylesheet" href="./style/main.css">
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="bundle.js"></script>
+
+  <style>
+    .heading {
+    color: #ffffff;
+      background-color: #f53240;
+    }
+    body {
+      background-color: #7cdbd5;
+    }
+    a {
+    color: #7f7e7e;
+    text-decoration:none;
+    }
+    a:hover {
+    text-decoration:underline;
+    }
+    .listHeadings{
+    padding: 2%;
+    font-size: 1.5em;
+    }
+  </style>
+
+</head>
+
+<header class="heading">
+  <h1 class="helloMsg">Kia ora {{name}}</h1>
+  <img src="./style/images/OA-logo.png" class="logo" alt="logo">
+</header>
+
+<body>
+
+  <div id="list-view">
+    {{#each submissions}}
+    <div class="linksList">
+      <h3 class="listHeadings"><a href="{{this.url}}" >{{this.title}}</a></h3>
+    </div>
+    {{/each}}
+  </div>
+
+</body>
+
+
+</html>

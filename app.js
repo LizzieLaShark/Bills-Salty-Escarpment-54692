@@ -7,9 +7,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs')
 var port = 5000;
-var hbs = require('express-hbs')
+var hbs = require('handlebars');
 
-var routes = require('./routes');
+var env = process.env.NODE_ENV || 'development' // string
+var knexConfig = require('./knexfile'); //big object
+var knexDbConfig = knexConfig[env] //small object
+var knexGenerator = require('knex') //function
+global.knex = knexGenerator(knexDbConfig)
+
+
+var scrapeParagraphs = require('./scrapeParagraphs')
 
 var app = express();
 
@@ -28,30 +35,19 @@ app.listen(port, function(err, res){  //Setting up server.
       console.log("bitch, yo server broke.")
     }
     else {
-      console.log("soft Serve, bitchez!")
+      console.log("soft Serve 5000, bitchez!")
     }
 });
 
-app.get('/index', function (req, res) {
-  res.render('index', ({name: 'Lizzie'}))
 
-})
+app.get('/', function (req, res) {
+      knex.select('title', 'url').from('submissions')
+      .then(function(data){
+      res.render('list-view', {submissions: data, name: 'Lizzie'} );
+    })
+  })
 
-app.get('/list-data', function (req, res) {
-  // have some logic
-  fs.readFile('./links.json', (err, data) => {
-    if (err) throw err;
-    var parseData = JSON.parse(data)
-    console.log(parseData)
-    res.send(parseData);
-// [i].title + ': www.parliament.nz' + parseData[i].url
-    // returning a response with some data
+app.get('/submission/:id', function (req, res) {
+  res.send('testing')
 
-    // var parseData = JSON.parse(data) //need to tell it to render just the titles?
-    // console.log(parseData)
-    // res.send(parseData);
-
-  });
-  //do the readFile then render the data using the
-  //{{links}} thing from the handlebars temp. maybe data.title or somethng
 })

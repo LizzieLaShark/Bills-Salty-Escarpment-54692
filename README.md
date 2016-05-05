@@ -14,9 +14,6 @@
 
 -ask about:
 
--could look at using a header to tack host(www.parliament.nz) to
- the relative path. => add to beginning when rendering the data to the page.
-
  -filtering the make-submission links?
 
 
@@ -45,7 +42,7 @@ when they click on the submission they want to view, create a new route, which c
   video: api folder containing and index and a 'controller to define each route'
 
 Next Steps:
-  -get filter method working then get the paragraphs to match the urls.
+  -get the paragraphs to match the urls.
   -render list view onto page prettily using hbs.
     -use params id's
   -link titles, paragraphs and url links so you can click a title, and get taken to a new page

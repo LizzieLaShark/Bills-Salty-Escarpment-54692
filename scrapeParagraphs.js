@@ -6,9 +6,8 @@ var cheerio = require('cheerio')
 // $(document).ready(function() {
 
 
-
-var scrapeParagraphs = function() {
-  request.get('http://www.parliament.nz/en-nz/pb/sc/make-submission/51SCMA_SCF_00DBSCH_INQ_68557_1/inquiry-into-whanau-access-to-and-management-of-tupapaku')  //gets the website using superagent
+var scrapeParagraphs = function(url, callback) {
+  request.get(url)  //gets the website using superagent
   .then(function(results){
       var $ = cheerio.load(results.text)
       var paragraphs = []
@@ -22,7 +21,7 @@ var scrapeParagraphs = function() {
       })
 
     console.log(paragraphs)
-    return paragraphs
+    callback(paragraphs)
   })
 
   .then(function(results){
@@ -37,6 +36,6 @@ var scrapeParagraphs = function() {
 }
 
 
-scrapeParagraphs();
+// scrapeParagraphs();
 
 module.exports = scrapeParagraphs
