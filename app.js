@@ -15,7 +15,7 @@ var knexDbConfig = knexConfig[env] //small object
 var knexGenerator = require('knex') //function
 global.knex = knexGenerator(knexDbConfig)
 
-
+var scraper = require('./scraper.js')
 var scrapeParagraphs = require('./scrapeParagraphs')
 
 var app = express();
