@@ -17,9 +17,8 @@ var scraper = function(){
   .then(function(results){
       var $ = cheerio.load(results.text)
       var linksArray = []
-      $('a').each(function(i, elem) {            //special cheerio documentation that is getting links
-        // linksArray[i] = $(this).attr('href')  //cheerio documentation pushing all 'a' things with href
-        // console.log ($(this).text())          //attributes into the previously declared links array
+      cheerio getting linsk
+      $('a').each(function(i, elem) {
         linksArray[i] = {
          title: $(this).text(),
          url: $(this).attr('href')

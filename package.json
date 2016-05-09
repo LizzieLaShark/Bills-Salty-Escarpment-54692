@@ -30,6 +30,7 @@
     "express": "^4.13.4",
     "express-hbs": "^0.8.4",
     "handlebars": "^4.0.5",
+    "jquery": "^2.2.3",
     "knex": "^0.10.0",
     "morgan": "^1.7.0",
     "node-promise": "^0.5.12",

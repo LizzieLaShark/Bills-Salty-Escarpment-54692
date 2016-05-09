@@ -42,7 +42,10 @@
   <div id="list-view">
     {{#each submissions}}
     <div class="linksList">
-      <h3 class="listHeadings"><a href="{{this.url}}" >{{this.title}}</a></h3>
+      <h3 class="listHeadings"><a href="http://www.parliament.nz{{this.url}}" >{{this.title}}</a></h3>
+      //put event listener here, take url and insert into scrape paragraph function.
+      //get the data back and insert it using client side rendering, can remove the old data
+      // by putting into a div and telling the function to remove it. (ask rosie later).
     </div>
     {{/each}}
   </div>

@@ -6,22 +6,19 @@ var cheerio = require('cheerio')
 // $(document).ready(function() {
 
 
-var scrapeParagraphs = function(url, callback) {
-  request.get(url)  //gets the website using superagent
+var scrapeParagraphs = function() {
+  request.get('http://www.parliament.nz/en-nz/pb/sc/make-submission/51SCMA_SCF_00DBSCH_INQ_68557_1/inquiry-into-whanau-access-to-and-management-of-tupapaku')  //gets the website using superagent
   .then(function(results){
+    console.log("getting to line 12 of function")
       var $ = cheerio.load(results.text)
-      var paragraphs = []
+      var subInfo = []
       $('p').each(function(i, elem) {
-        paragraphs[i] = $('.section').attr('p')
-        console.log ($(this).text())
-        paragraphs[i] = {
-         info: $(this).text(),
-        //  url: $(this).attr('href')
+        subInfo[i] = {
+          subInfo: $(this).text(),
         }
       })
-
-    console.log(paragraphs)
-    callback(paragraphs)
+      console.log(subInfo)
+      return subInfo
   })
 
   .then(function(results){
@@ -36,6 +33,13 @@ var scrapeParagraphs = function(url, callback) {
 }
 
 
-// scrapeParagraphs();
+scrapeParagraphs();
 
 module.exports = scrapeParagraphs
+
+//
+// $('.section').attr('p')
+// console.log ($(this).text())
+// paragraphs[i] = {
+//  info: $(this).text(),
+// //  url: $(this).attr('href')
