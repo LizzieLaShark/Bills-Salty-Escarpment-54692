@@ -1,13 +1,17 @@
 var $ = require('jquery')
 var controller = require('./controlListeners')
 
-function lister(){
-  console.log('listening')
-
-  $('.listHeadings').click(function(e) {
-  e.preventDefault()
-  controller.newAccountForm()
+$('document').ready(function() {
   listen()
-})
 
-}
+  function listen() {
+    console.log("listening")
+
+    $('.listHeadings a').click(function(e) {
+      var linkToScrape = $(e.target).attr('href')
+      e.preventDefault()
+      controller.subInfoClick(listen, linkToScrape)
+      console.log("listener fired")
+    })
+  }
+})

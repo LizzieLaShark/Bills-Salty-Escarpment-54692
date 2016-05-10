@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "app.js": "node app.js",
-    "build": "browserify -t handlebarsify main.js > main.bundle.js"
+    "build": "browserify -t hbsify listeners.js > public/bundle.js",
+    "watch": "watchify -t hbsify listeners.js -o public/bundle.js -dv"
+
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
     "express": "^4.13.4",
     "express-hbs": "^0.8.4",
     "handlebars": "^4.0.5",
+    "hbsify": "^1.0.1",
     "jquery": "^2.2.3",
     "knex": "^0.10.0",
     "morgan": "^1.7.0",

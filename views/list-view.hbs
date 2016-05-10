@@ -5,36 +5,15 @@
 
   <title>Our Aotearoa</title>
 
-  <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style.css">
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="bundle.js"></script>
-
-  <style>
-    .heading {
-    color: #ffffff;
-      background-color: #f53240;
-    }
-    body {
-      background-color: #7cdbd5;
-    }
-    a {
-    color: #7f7e7e;
-    text-decoration:none;
-    }
-    a:hover {
-    text-decoration:underline;
-    }
-    .listHeadings{
-    padding: 2%;
-    font-size: 1.5em;
-    }
-  </style>
 
 </head>
 
 <header class="heading">
-  <h1 class="helloMsg">Kia ora {{name}}</h1>
-  <img src="./style/images/OA-logo.png" class="logo" alt="logo">
+  <img src="./images/OA-logo.png" class="logo" alt="logo">
+    <h1 class="helloMsg">Kia ora {{name}}</h1>
 </header>
 
 <body>
@@ -43,11 +22,14 @@
     {{#each submissions}}
     <div class="linksList">
       <h3 class="listHeadings"><a href="http://www.parliament.nz{{this.url}}" >{{this.title}}</a></h3>
-      //put event listener here, take url and insert into scrape paragraph function.
-      //get the data back and insert it using client side rendering, can remove the old data
-      // by putting into a div and telling the function to remove it. (ask rosie later).
+      {{/each}}
+        <div id="submissionInfo">
+          {{#each subInfo}}
+            <p>{{this.paragraphData}}</p>
+          {{/each}}
+        </div>
     </div>
-    {{/each}}
+
   </div>
 
 </body>

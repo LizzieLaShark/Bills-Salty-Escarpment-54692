@@ -1,5 +1,3 @@
-//this file should start the server and assign the routing.
-
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -8,6 +6,7 @@ var bodyParser = require('body-parser');
 var fs = require('fs')
 var port = 5000;
 var hbs = require('handlebars');
+var scrapeParagraphs = require('./scrapeParagraphs')
 
 var env = process.env.NODE_ENV || 'development' // string
 var knexConfig = require('./knexfile'); //big object
@@ -19,9 +18,9 @@ var scraper = require('./scraper.js')
 var scrapeParagraphs = require('./scrapeParagraphs')
 
 var app = express();
-
-
+app.use(express.static('public'));
 var hbs = require('express-hbs');
+app.use(bodyParser.json())
 
 // Use `.hbs` for extensions and find partials in `views/partials`.
 app.engine('hbs', hbs.express4({
@@ -47,7 +46,15 @@ app.get('/', function (req, res) {
     })
   })
 
-app.get('/submission/:id', function (req, res) {
-  res.send('testing')
+// app.get('/submission/:id', function (req, res) {
+//   res.send('testing')
+// })
 
+app.post('/scrape', function (req, res){
+  console.log("this is req.body", req.body)
+  scrapeParagraphs(req.body.linkToScrape, function(subInfo){
+    res.json(subInfo)
+    //res.render('list-view', {paragraphData: subInfo})
+    console.log("here's sub info",  subInfo)
+  })
 })

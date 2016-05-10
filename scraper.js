@@ -17,7 +17,7 @@ var scraper = function(){
   .then(function(results){
       var $ = cheerio.load(results.text)
       var linksArray = []
-      cheerio getting linsk
+      //cheerio getting links
       $('a').each(function(i, elem) {
         linksArray[i] = {
          title: $(this).text(),
