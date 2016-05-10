@@ -1,0 +1,44 @@
+{
+  "name": "lizzie",
+  "version": "1.0.0",
+  "description": "Encouraging better engagement with political process in Aotearoa/NZ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "app.js": "node app.js",
+    "build": "browserify -t express-hbs listeners.js > client-side/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LizzieLaShark/Phase2PersonalProject.git"
+  },
+  "author": "LizzieLaShark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LizzieLaShark/Phase2PersonalProject/issues"
+  },
+  "homepage": "https://github.com/LizzieLaShark/Phase2PersonalProject#readme",
+  "devDependencies": {
+    "cheerio": "^0.20.0",
+    "fs": "0.0.2",
+    "request": "^2.70.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "browserify": "^13.0.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-hbs": "^0.8.4",
+    "handlebars": "^4.0.5",
+    "jquery": "^2.2.3",
+    "knex": "^0.10.0",
+    "morgan": "^1.7.0",
+    "node-promise": "^0.5.12",
+    "nodemon": "^1.9.1",
+    "pg": "^4.5.5",
+    "promise": "^7.1.1",
+    "promisify": "0.0.3",
+    "superagent": "^1.8.3",
+    "superagent-promise": "^1.1.0"
+  }
+}

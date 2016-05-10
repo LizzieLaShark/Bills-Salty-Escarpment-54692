@@ -16,4 +16,10 @@ $('document').ready(function() {
       console.log("listener fired")
     })
   }
+
+//listen for submit submission. When fired, use jquery
+//to grab data and put it into db? or use just knex.
+  $('#submissionSubmit')
+
+
 })
