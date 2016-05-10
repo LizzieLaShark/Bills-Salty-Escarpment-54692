@@ -11,7 +11,7 @@ function subInfoClick(listen, linkToScrape){
     .send({linkToScrape: linkToScrape})
     .end(function(err, res){
        console.log('this should be html rendered', view({paragraphs: res.body}))
-      $('.helloMsg').html(view({paragraphs: res.body}))
+      $('.listHeadings').html(view({paragraphs: res.body}))
     })
 }
 module.exports = {
