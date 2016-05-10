@@ -8,7 +8,6 @@
     "app.js": "node app.js",
     "build": "browserify -t hbsify listeners.js > public/bundle.js",
     "watch": "watchify -t hbsify listeners.js -o public/bundle.js -dv"
-
   },
   "repository": {
     "type": "git",
@@ -38,6 +37,8 @@
     "morgan": "^1.7.0",
     "node-promise": "^0.5.12",
     "nodemon": "^1.9.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.0",
     "pg": "^4.5.5",
     "promise": "^7.1.1",
     "promisify": "0.0.3",

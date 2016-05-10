@@ -3,7 +3,21 @@
     <p>{{this.subInfo}}</p>
   {{/each}}
 </div>
-
-// knex('submissions').insert(sliced).then(function(){
-//   console.log("done")
-// })
+<div id="subForm">
+  <form>
+    Bill You are Submitting on:<br>
+    <input type="text" name="firstname" required><br>
+    Name (either your name or the organisation you're submitting on behalf of):<br>
+    <input type="text" name="name" required><br>
+    Phone:<br>
+    <input type="number" name="phone" required><br>
+    Email:<br>
+    <input type="email" name="email" required><br>
+    Region:<br>
+    <input type="text" name="region" required><br>
+    Submission:<br>
+    <input type="text" name="submission" size="100" required><br>
+    <br><input type="checkbox" name="appear" value="appear" required>Would you like to appear before the Select Committee?<br>
+    <br><input type="submit" value="Submit">
+  </form>
+</div>

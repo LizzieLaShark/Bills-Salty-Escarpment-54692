@@ -3,9 +3,6 @@ var request = require('superagent-promise')(require('superagent'), Promise);
 var fs = require('fs')
 var cheerio = require('cheerio')
 
-// $(document).ready(function() {
-
-
 var scrapeParagraphs = function(url, callback) {
   request.get(url)  //gets the website using superagent
   .then(function(results){
@@ -24,14 +21,4 @@ var scrapeParagraphs = function(url, callback) {
   })
 }
 
-//
-// scrapeParagraphs();
-
 module.exports = scrapeParagraphs
-
-//
-// $('.section').attr('p')
-// console.log ($(this).text())
-// paragraphs[i] = {
-//  info: $(this).text(),
-// //  url: $(this).attr('href')

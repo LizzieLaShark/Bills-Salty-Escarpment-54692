@@ -1,3 +1,5 @@
+//n.b. this file and everything in it (inc controlListeners) is what is currently being bundled.
+
 var $ = require('jquery')
 var controller = require('./controlListeners')
 
