@@ -10,8 +10,8 @@ var scrapeParagraphs = require('./scrapeParagraphs')
 
 var env = process.env.NODE_ENV || 'development' // string
 var knexConfig = require('./knexfile'); //big object
+var knexGenerator = require('knex')
 var knexDbConfig = knexConfig[env] //small object
-var knexGenerator = require('knex') //function
 global.knex = knexGenerator(knexDbConfig)
 
 var scraper = require('./scraper.js')
