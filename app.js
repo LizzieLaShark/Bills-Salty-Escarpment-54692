@@ -42,7 +42,7 @@ app.listen(port, function(err, res){  //Setting up server.
 
 
 app.get('/', function (req, res) {
-      knex.select('title', 'url').from('submissions')
+      knex.select('title', 'url').from('submission_data')
       .then(function(data){
       res.render('list-view', {submissions: data, name: 'Lizzie'} );
     })

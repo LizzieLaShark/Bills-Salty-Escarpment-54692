@@ -33,7 +33,7 @@ var scraper = function(){
       knex('submissions').del().then(function(){
           console.log("ran the deletions function")
       })
-      knex('submissions').insert(sliced).then(function(){
+      knex('submission_data').insert(sliced).then(function(){
         console.log("done")
       })
   })
