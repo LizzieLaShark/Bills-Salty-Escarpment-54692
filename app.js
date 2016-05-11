@@ -55,18 +55,25 @@ app.post('/scrape', function (req, res){
   //console.log("this is req.body", req.body)
   scrapeParagraphs(req.body.linkToScrape, function(subInfo){
     res.json(subInfo)
-    //res.render('list-view', {paragraphData: subInfo})
-    //console.log("here's sub info",  subInfo)
+    console.log(subInfo)
+
   })
 })
+//need to bundle this so it can render when button is clicked!
+function bundleForm(){
+  app.get('/form', function(req, res){
+  console.log("hello!")
+  res.render('submissionform')
+})
+}
 
 app.post('/submit', function(req, res){
-  console.log('hitting knex submission entry function')
-  console.log("here's req.body type", req.body)
   knex('submission_entries').insert(req.body)
   .then(function(data){
-    res.send("hello")
+    res.render('thankyouPage')
   })
-
-
 })
+
+module.exports = {
+  bundleForm: bundleForm
+}

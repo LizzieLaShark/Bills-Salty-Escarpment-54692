@@ -13,7 +13,6 @@ var scrapeParagraphs = function(url, callback) {
           subInfo: $(this).text(),
         }
       })
-       console.log(subInfo)
       callback(subInfo)
   })
   .catch(function(err){

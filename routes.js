@@ -2,6 +2,12 @@
 // to nicely modularise your work
 
 
+  app.get('/form', function(req, res){
+  console.log("hello!")
+  res.render('submissionform')
+})
+
+
 // var express = require('express');
 // var router = express.Router();
 //

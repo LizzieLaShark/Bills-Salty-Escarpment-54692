@@ -4,19 +4,23 @@ var $ = require('jquery')
 var controller = require('./controlListeners')
 var request = require('superagent')
 
-
 $('document').ready(function() {
   listen()
 
-  function listen() {
-    console.log("listening")
-    $('.listHeadings a').click(function(e) {
-      e.preventDefault()
-      var linkToScrape = $(e.target).attr('href')
-      controller.subInfoClick(linkToScrape)
-      console.log("listener fired")
-    })
-  }
+    function listen() {
+      console.log("listening")
+      $('.listHeadings a').click(function(e) {
+        e.preventDefault()
+        var linkToScrape = $(e.target).attr('href')
+        controller.subInfoClick(linkToScrape)
+        console.log("listener fired")
+      })
+    }
+  })
+
+
+
+
 
   // function subscribeToSubmitButtonClick(){
   //   $('#submissionSubmit').click(function(e){
@@ -34,6 +38,3 @@ $('document').ready(function() {
 
 //listen for submit submission. When fired, use jquery
 //to grab data and put it into db? or use just knex.
-
-
-})

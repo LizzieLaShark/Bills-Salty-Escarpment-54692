@@ -1,9 +1,3 @@
-<div id="paragraphs">
-  {{#each paragraphs}}
-    <p>{{subInfo}}</p>
-{{/each}}
-</div>
-
 <div class="subForm">
   <form action="/submit" method="post">
     Bill You are Submitting on:<br>
@@ -17,12 +11,8 @@
     Region:<br>
     <input type="text" name="region" required><br>
     Submission:<br>
-    <input type="text" name="submission" size="100" required><br>
+    <input type="text" class="subInputBox" name="submission" required><br>
     <br><input type="checkbox" name="appearing" value="appear">Would you like to appear before the Select Committee?<br>
     <br><input type="submit" id="submissionSubmit" value="Enter Submission">
   </form>
-</div>
-
-<div>
-  <button id="submitNow"><a href="/form">Make a Submission!</button>
 </div>

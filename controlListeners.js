@@ -25,13 +25,12 @@ function subInfoClick(linkToScrape){
 //continue to listen for subscribeToSubmitButtonClick. Otherwise it
 //couldn't find the subscribeToSubmitButtonClick to keep listening to. (???)
 
-function getFormData() {
-  console.log("listening to submissionSubmitClick")
-  var formData = $('.subForm').val()//.attr('input')
-  console.log(formData)
-  }
+// function getFormData() {
+//   console.log("listening to submissionSubmitClick")
+//   var formData = $('.subForm')//.attr('input')
+//   console.log(formData)
+//   }
 
 module.exports = {
-  subInfoClick: subInfoClick,
-  getFormData: getFormData
+  subInfoClick: subInfoClick
 }
