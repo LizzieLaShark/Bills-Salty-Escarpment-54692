@@ -14,7 +14,7 @@ module.exports = {
       database: 'submissions_test',
   },
 
-  production: process.env.DATABASE_URL || {
+  production: {
     client: 'postgresql',
    connection: process.env.DATABASE_URL,
    pool: {
