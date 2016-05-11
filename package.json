@@ -43,6 +43,7 @@
     "promise": "^7.1.1",
     "promisify": "0.0.3",
     "superagent": "^1.8.3",
-    "superagent-promise": "^1.1.0"
+    "superagent-promise": "^1.1.0",
+    "watchify": "^3.7.0"
   }
 }

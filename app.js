@@ -59,8 +59,8 @@ app.post('/scrape', function (req, res){
   })
 })
 
-app.get('/submit', function(req, res){
+app.post('/submit', function(req, res){
   console.log('hitting knex submission entry function')
-  knex.insert
+  knex('submissionEntries').insert(res.body)
 
 })
