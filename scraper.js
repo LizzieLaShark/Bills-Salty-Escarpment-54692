@@ -28,9 +28,9 @@ var scraper = function(){
   })
   .then(function(results){
       var sliced = results.slice(35, -9)
-      console.log(sliced)
+      // console.log(sliced)
 
-      knex('submissions').del().then(function(){
+      knex('submission_data').del().then(function(){
           console.log("ran the deletions function")
       })
       knex('submission_data').insert(sliced).then(function(){
