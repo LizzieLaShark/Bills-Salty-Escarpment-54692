@@ -4,6 +4,8 @@
   "description": "Encouraging better engagement with political process in Aotearoa/NZ",
   "main": "app.js",
   "scripts": {
+    "start": "node ./app.js",
+    "start-dev":"nodemon ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "app.js": "node app.js",
     "build": "browserify -t hbsify listeners.js > public/bundle.js",
