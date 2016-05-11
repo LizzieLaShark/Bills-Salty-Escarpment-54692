@@ -4,7 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs')
-var port = 5000;
+var port = process.env.PORT || 5000;
 var hbs = require('handlebars');
 var scrapeParagraphs = require('./scrapeParagraphs')
 
