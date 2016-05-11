@@ -12,6 +12,7 @@ var env = process.env.NODE_ENV || 'development' // string
 var knexConfig = require('./knexfile'); //big object
 var knexGenerator = require('knex')
 var knexDbConfig = knexConfig[env] //small object
+console.log("env:", env, "config:", knexConfig, "db config:", knexDbConfig)
 global.knex = knexGenerator(knexDbConfig)
 
 var scraper = require('./scraper.js')
