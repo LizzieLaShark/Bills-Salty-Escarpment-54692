@@ -13,24 +13,24 @@ $('document').ready(function() {
     $('.listHeadings a').click(function(e) {
       e.preventDefault()
       var linkToScrape = $(e.target).attr('href')
-      controller.subInfoClick(subscribeToSubmitButtonClick, linkToScrape)
+      controller.subInfoClick(linkToScrape)
       console.log("listener fired")
     })
   }
 
-  function subscribeToSubmitButtonClick(){
-    $('#submissionSubmit').click(function(e){
-        e.preventDefault()
-        var formData = controller.getFormData()
-        //post to /submit route, sending the form data.
-        request.post('/submit')
-          .send(formData)
-          .end(function(err, res){
-            cnosole.log("form data sent to submit route")
-          })
-        console.log("you clicked Submit!")
-    })
-  }
+  // function subscribeToSubmitButtonClick(){
+  //   $('#submissionSubmit').click(function(e){
+  //       e.preventDefault()
+  //       var formData = controller.getFormData()
+  //       //post to /submit route, sending the form data.
+  //       request.post('/submit')
+  //         .send(formData)
+  //         .end(function(err, res){
+  //           console.log("form data sent to submit route")
+  //         })
+  //       console.log("you clicked Submit!")
+  //   })
+  // }
 
 //listen for submit submission. When fired, use jquery
 //to grab data and put it into db? or use just knex.

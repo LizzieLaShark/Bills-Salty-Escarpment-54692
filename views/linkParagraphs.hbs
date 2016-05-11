@@ -4,11 +4,11 @@
   {{/each}}
 </div>
 <div class="subForm">
-  <form>
+  <form action="/submit" method="post">
     Bill You are Submitting on:<br>
-    <input type="text" class="subForm" name="billName" required><br>
+    <input type="text" name="billName" required><br>
     Name (either your name or the organisation you're submitting on behalf of):<br>
-    <input type="text" class="subForm" name="name" required><br>
+    <input type="text" name="name" required><br>
     Phone:<br>
     <input type="number" name="phone" required><br>
     Email:<br>

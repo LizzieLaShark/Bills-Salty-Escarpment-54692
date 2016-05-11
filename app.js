@@ -21,6 +21,7 @@ var app = express();
 app.use(express.static('public'));
 var hbs = require('express-hbs');
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 
 // Use `.hbs` for extensions and find partials in `views/partials`.
 app.engine('hbs', hbs.express4({
@@ -51,16 +52,21 @@ app.get('/', function (req, res) {
 // })
 
 app.post('/scrape', function (req, res){
-  console.log("this is req.body", req.body)
+  //console.log("this is req.body", req.body)
   scrapeParagraphs(req.body.linkToScrape, function(subInfo){
     res.json(subInfo)
     //res.render('list-view', {paragraphData: subInfo})
-    console.log("here's sub info",  subInfo)
+    //console.log("here's sub info",  subInfo)
   })
 })
 
 app.post('/submit', function(req, res){
   console.log('hitting knex submission entry function')
-  knex('submissionEntries').insert(res.body)
+  console.log("here's req.body type", req.body)
+  knex('submission_entries').insert(req.body)
+  .then(function(data){
+    res.send("hello")
+  })
+
 
 })

@@ -3,7 +3,7 @@ var view = require('./views/linkParagraphs.hbs')
 var scrapeParagraphs = require('./scrapeParagraphs')
 var request = require('superagent')
 
-function subInfoClick(listener, linkToScrape){
+function subInfoClick(linkToScrape){
   console.log('listening to subInfoClick')
 
   console.log(linkToScrape)
@@ -12,7 +12,7 @@ function subInfoClick(listener, linkToScrape){
     .end(function(err, res){
        //console.log('this should be html rendered', view({paragraphs: res.body}))
       $('.listHeadings').html(view({paragraphs: res.body}))
-      listener()
+      // listener()
     })
 }
 //the above function links directly to both the listeners.js listener and
@@ -27,7 +27,7 @@ function subInfoClick(listener, linkToScrape){
 
 function getFormData() {
   console.log("listening to submissionSubmitClick")
-  var formData = $('.subForm')//.attr('input')
+  var formData = $('.subForm').val()//.attr('input')
   console.log(formData)
   }
 
