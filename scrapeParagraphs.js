@@ -6,7 +6,7 @@ var cheerio = require('cheerio')
 var scrapeParagraphs = function(url, callback) {
   request.get(url)  //gets the website using superagent
   .then(function(results){
-      var $ = cheerio.load(results.text)
+      var $ = cheerio.load(results.text)    
       var subInfo = []
       $('p').each(function(i, elem) {
         subInfo[i] = {

@@ -1,13 +1,17 @@
 .heading {
   color: #ffffff;
   background-color: #f53240;
-  padding-bottom: 15%;
+  padding-bottom: 25%;
   background-image: url("http://img0.ndsstatic.com/wallpapers/480e1343ea15be85253a86bfea637f8b_large.jpeg");
 }
+.logo {
+  padding:2%;
+  margin-left: 30%;
+  /*padding-bottom: 20%;*/
+  }
   body {
     background-color: #7cdbd5;
     /*background-image: url("https://i.imgur.com/665nscC.jpg");*/
-
   }
   a {
   color: #4F4F4F;
@@ -25,6 +29,7 @@
     padding-right:7%;
     padding-top:4%;
     padding-bottom:4%;
+    font-size: 20;
   }
   .subForm {
     padding: 10%;
@@ -35,13 +40,7 @@
     padding-top: 11%;
     font-size: 1.5em;
   }
-  .logo {
-    padding:2%;
-    margin-left: 30%;
-    padding-bottom: 20%;
-    height:20%%;
 
-  }
   .introParagraph {
     padding:2%;
   }
@@ -116,6 +115,13 @@
   #submissionSubmit{
     background-color:#f53240;
   }
+  .form-hidden {
+    display: none;
+  }
+
+  attach a class to the form display none by default. Make a
+  listener. look for the jquery class toggle.
+
 
   nice grey colour #F9F9F9
   nice yellow color #FCCC30

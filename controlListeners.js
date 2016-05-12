@@ -10,11 +10,20 @@ function subInfoClick(linkToScrape){
   request.post('/scrape')
     .send({linkToScrape: linkToScrape})
     .end(function(err, res){
-       //console.log('this should be html rendered', view({paragraphs: res.body}))
-      $('.listHeadings').html(view({paragraphs: res.body}))
+      console.log("runningSubinfoClick")
+      $('#mainView').html("")
+      $('#mainView').html(view({paragraphs: res.body}))
       // listener()
+      $('#submitNow').click(function(e){
+          console.log("form toggle listener fired")
+        // e.preventDefault()
+        $("#mainForm").toggleClass('form-hidden')
+        window.scrollTo(0,document.body.scrollHeight);
+      })
     })
 }
+
+
 //the above function links directly to both the listeners.js listener and
 //the '/scrape' route in the app.js folder. It does a post request to the /scrape route
 //sends the linkToScrape. The linkToScrape gets sent to the route function
@@ -25,11 +34,7 @@ function subInfoClick(linkToScrape){
 //continue to listen for subscribeToSubmitButtonClick. Otherwise it
 //couldn't find the subscribeToSubmitButtonClick to keep listening to. (???)
 
-// function getFormData() {
-//   console.log("listening to submissionSubmitClick")
-//   var formData = $('.subForm')//.attr('input')
-//   console.log(formData)
-//   }
+
 
 module.exports = {
   subInfoClick: subInfoClick
