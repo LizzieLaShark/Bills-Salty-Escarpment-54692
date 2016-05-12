@@ -1,9 +1,13 @@
 .heading {
   color: #ffffff;
-    background-color: #f53240;
-  }
+  background-color: #f53240;
+  padding-bottom: 15%;
+  background-image: url("http://img0.ndsstatic.com/wallpapers/480e1343ea15be85253a86bfea637f8b_large.jpeg");
+}
   body {
     background-color: #7cdbd5;
+    /*background-image: url("https://i.imgur.com/665nscC.jpg");*/
+
   }
   a {
   color: #4F4F4F;
@@ -34,6 +38,9 @@
   .logo {
     padding:2%;
     margin-left: 30%;
+    padding-bottom: 20%;
+    height:20%%;
+
   }
   .introParagraph {
     padding:2%;
@@ -42,22 +49,72 @@
     margin: 1%;
   }
 
-  .nav li {
-   float: left;
-   position: relative;
-   padding: 2%;
+#nav ul {
+  list-style: none;
+  background-color: #FB8833;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+#nav li {
+  font-family: 'Oswald', sans-serif;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+#nav li {
+   display: inline-block;
+   margin-right: -4px;
+ }
+ #nav ul {
+    overflow: auto;
+    width: 600px;
+    margin: 0 auto;
   }
+
   .jkpics{
-    position: relative;
+    float: left;
     padding: 5%;
   }
   .thanksMessage {
     padding: 3%;
   }
-  .subInputBox {
-    height:20px;
-    width: 20px;
+  .subInputBox{
+    height:20px !important;
+    width: 20px !important;
     padding: 1%;
+  }
+  #submitNow {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding-right: 10%;
+  padding-left: 10%;
+  background-color:#f53240;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  font-family: sans-serif;
+
+  position:relative;
+  transition: .5s ease;
+  top: 40%;
+  left: 25%;
+  }
+  .introParagraph {
+    font-family: sans-serif;
+    font-weight: bold;
+    padding-left: 10%;
+    font-size: 1.5em;
+  }
+  #submissionSubmit{
+    background-color:#f53240;
   }
 
   nice grey colour #F9F9F9
