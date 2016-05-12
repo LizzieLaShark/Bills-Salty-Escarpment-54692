@@ -1,7 +1,7 @@
 .heading {
   color: #ffffff;
   background-color: #f53240;
-  padding-bottom: 25%;
+  padding-bottom: 30%;
   background-image: url("http://img0.ndsstatic.com/wallpapers/480e1343ea15be85253a86bfea637f8b_large.jpeg");
 }
 .logo {
@@ -121,10 +121,6 @@
   .form-hidden {
     display: none;
   }
-
-  attach a class to the form display none by default. Make a
-  listener. look for the jquery class toggle.
-
-
-  nice grey colour #F9F9F9
-  nice yellow color #FCCC30
+/*.linksList {
+  border-left: 20%;
+}*/

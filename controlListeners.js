@@ -18,7 +18,7 @@ function subInfoClick(linkToScrape){
           console.log("form toggle listener fired")
         // e.preventDefault()
         $("#mainForm").toggleClass('form-hidden')
-        window.scrollTo(0,1100);
+        window.scrollTo(0,document.body.scrollHeight);
       })
     })
 }
