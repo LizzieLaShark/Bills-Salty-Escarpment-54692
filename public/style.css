@@ -32,7 +32,8 @@
     font-size: 20;
   }
   .subForm {
-    padding: 10%;
+    padding: 5%;
+    padding-left: 30%;
   }
   .helloMsg {
     float:right;
@@ -43,6 +44,7 @@
 
   .introParagraph {
     padding:2%;
+    color: #3B3B3B;
   }
   #backButton {
     margin: 1%;
@@ -82,8 +84,8 @@
     padding: 3%;
   }
   .subInputBox{
-    height:20px !important;
-    width: 20px !important;
+    height:50% !important;
+    width: 85% !important;
     padding: 1%;
   }
   #submitNow {
@@ -113,6 +115,7 @@
     font-size: 1.5em;
   }
   #submissionSubmit{
+    color: black;
     background-color:#f53240;
   }
   .form-hidden {
